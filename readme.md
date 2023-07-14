@@ -1,29 +1,26 @@
-> **Project documentation Projeckt IDS -- 4 část**
+# Project documentation Projeckt IDS -- 4 část
 
-Fakulta informačních technologií Tým: xosusk00 Vysoké učení technické v
-Brně Jan Osuský -- xosusk00
+Fakulta informačních technologií 
+Tým: xosusk00 
+Vysoké učení technické v Brně
+Jan Osuský -- xosusk00
 
-TABLE OF CONTENT:\
-Design diagram
-..........................................................................3
-Introduction................................................................................4
-Solution
-description...................................................................4
-Description of
-trigger................................................................5
-Descrition of
-procedure.............................................................5
-Description of materialized
-view..............................................6 Description of
-complex SELECT\.................................................6
+## TABLE OF CONTENT:
+Design diagram ..........................................................................3 \
+Introduction................................................................................4\
+Solution description...................................................................4\
+Description of trigger................................................................5\
+Descrition of procedure.............................................................5\
+Description of materialized view..............................................6\
+Description of complex SELECT.................................................6\
 Description of INDEX and EXPLAIN PLAN.................................7
 
-> Design diagram:
+## Design diagram:
 
 ![](vertopal_4b0798e775994bb2bc3e5bc6323026aa/media/image1.png){width="8.243055555555555in"
 height="4.443054461942257in"}
 
-Introduction:
+## Introduction:
 
 In this project documentation, we will describe the design and
 implementation of a database for an airline, the last part of the
@@ -36,7 +33,7 @@ implementation of data tables. As part of the project, we also created
 several queries, procedures and triggers that are used to manage data in
 the database efficiently and securely.
 
-Solution description:
+## Solution description:
 
 .In this project I created a database design for an airline in an
 individual plan. Based on the requirements of the assignment, I designed
@@ -51,7 +48,7 @@ relational database system. To ensure data security, I designed user
 access rights and data input security using input validation and data
 type restrictions
 
-Description of trigger:
+## Description of trigger:
 
 The first trigger named incrementReservationId is used to automatically
 increment the rId value before inserting a new reservation into the
@@ -68,7 +65,7 @@ table. A SELECT query is used for this, which checks whether a customer
 with the given passport already exists. If so, the error \"Passport
 number already exists in the database.\" will be raised.
 
-Descrition of procedure:
+## Description of procedure:
 
 The first procedure is called avgPassengersPerReservation and is used to
 calculate the average number of passengers per reservation. In the first
@@ -92,7 +89,7 @@ If a flight is found, the flight price is updated to the new price.
 Finally, a price update message is displayed. If any other exception
 occurs, the procedure outputs an empty message.
 
-Descrition of materialized view:
+## Description of materialized view:
 
 The implementation involves granting permissions to two users: xosusk00
 and xosusk01. User xosusk00 was granted full access to all tables, as
@@ -106,7 +103,7 @@ combines data from the customer and reservation tables of user xosusk00.
 It is updated periodically based on the specified REFRESH COMPLETE
 schedule and will be updated after each COMMIT transaction.
 
-Descrition of complex SELECT:
+## Description of complex SELECT:
 
 This SELECT query uses a WITH clause to define a subquery named\
 passengerCounts. This sub query calculates the number of passengers in
@@ -118,7 +115,7 @@ price, type of reservation and number of passengers. If the customer has
 no reservations, the reservation columns will be empty and the number of
 passengers will be 0.
 
-Descrition of INDEX and EXPLAIN PLAN:
+## Description of INDEX and EXPLAIN PLAN:
 
 EXPLAIN PLAN FOR starts the database optimization engine that creates a
 query execution plan for the second statement. The plan contains
